@@ -70,7 +70,7 @@
               <li><a href="team.html">Team</a></li>
               <li><a href="experts.html">Experts</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="login.html" class="login-btn">Login</a></li>
+              <li><a href="login.html" class="login-btn" id="authBtn">Login</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
               <span></span>
@@ -485,13 +485,14 @@
             </div>
             <form class="contact-form">
               <div class="form-group">
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Your Name" required />
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Your Email" required />
+                <input type="email" name="email" placeholder="Your Email" required />
               </div>
               <div class="form-group">
                 <textarea
+                  name="message"
                   placeholder="Your Message"
                   rows="5"
                   required

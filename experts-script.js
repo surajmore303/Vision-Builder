@@ -2,8 +2,10 @@
 function bookAppointment(expertName) {
     const modal = document.getElementById('bookingModal');
     const expertNameElement = document.getElementById('expertName');
+    const expertNameInput = document.getElementById('expertNameInput');
     
     expertNameElement.textContent = `with ${expertName}`;
+    expertNameInput.value = expertName;
     modal.style.display = 'block';
 }
 
@@ -22,20 +24,30 @@ window.onclick = function(event) {
 
 // Form submission
 document.addEventListener('DOMContentLoaded', function() {
-    const bookingForm = document.querySelector('.booking-form');
+    const bookingForm = document.getElementById('bookingForm');
     
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
         const formData = new FormData(bookingForm);
-        const expertName = document.getElementById('expertName').textContent;
+        formData.append('action', 'book_appointment');
         
-        // Show success message
-        alert(`Appointment booked successfully ${expertName}! You will receive a confirmation email shortly.`);
-        
-        // Close modal and reset form
-        closeBookingModal();
-        bookingForm.reset();
+        fetch('booking_handler.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                closeBookingModal();
+                bookingForm.reset();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            alert('Booking failed. Please try again.');
+        });
     });
 });

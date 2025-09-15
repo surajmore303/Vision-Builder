@@ -3,16 +3,53 @@ document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.getElementById('splash-screen');
     const mainWebsite = document.getElementById('main-website');
     
-    // Show main website after splash screen animation (3 seconds)
-    setTimeout(() => {
-        splashScreen.style.display = 'none';
-        mainWebsite.classList.remove('hidden');
-        mainWebsite.style.opacity = '1';
-        mainWebsite.style.animation = 'websiteSlideIn 2s ease-out forwards';
-        
-        // Add scroll animations
-        initScrollAnimations();
-    }, 3000);
+    // Check if this is first visit
+    const hasVisited = localStorage.getItem('visionBuilderVisited');
+    
+    // Check if user is logged in
+    fetch('check_session.php')
+        .then(response => response.json())
+        .then(data => {
+            // Update navigation based on login status
+            updateNavigation(data.logged_in);
+            
+            if (hasVisited || data.logged_in) {
+                // Skip splash screen for returning users or logged in users
+                splashScreen.style.display = 'none';
+                mainWebsite.classList.remove('hidden');
+                mainWebsite.style.opacity = '1';
+                initScrollAnimations();
+            } else {
+                // Show splash screen for 3 seconds for first-time visitors
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainWebsite.classList.remove('hidden');
+                    mainWebsite.style.opacity = '1';
+                    mainWebsite.style.animation = 'websiteSlideIn 2s ease-out forwards';
+                    initScrollAnimations();
+                    // Mark as visited
+                    localStorage.setItem('visionBuilderVisited', 'true');
+                }, 3000);
+            }
+        })
+        .catch(() => {
+            // If session check fails, show splash screen only for first visit
+            if (!hasVisited) {
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainWebsite.classList.remove('hidden');
+                    mainWebsite.style.opacity = '1';
+                    mainWebsite.style.animation = 'websiteSlideIn 2s ease-out forwards';
+                    initScrollAnimations();
+                    localStorage.setItem('visionBuilderVisited', 'true');
+                }, 3000);
+            } else {
+                splashScreen.style.display = 'none';
+                mainWebsite.classList.remove('hidden');
+                mainWebsite.style.opacity = '1';
+                initScrollAnimations();
+            }
+        });
     
     // Initialize all functionality
     initNavigation();
@@ -20,6 +57,40 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initScrollEffects();
 });
+
+// Update navigation based on login status
+function updateNavigation(isLoggedIn) {
+    const authBtn = document.getElementById('authBtn');
+    if (authBtn) {
+        if (isLoggedIn) {
+            authBtn.textContent = 'Account';
+            authBtn.href = 'account.php';
+            authBtn.onclick = null;
+        } else {
+            authBtn.textContent = 'Login';
+            authBtn.href = 'login.html';
+            authBtn.onclick = null;
+        }
+    }
+}
+
+// Logout function
+function logout() {
+    fetch('auth.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'action=logout'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showNotification('Logged out successfully', 'success');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+    });
+}
 
 // Navigation Functionality
 function initNavigation() {
@@ -175,10 +246,9 @@ function initContactForm() {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
+        const name = contactForm.querySelector('input[name="name"]').value;
+        const email = contactForm.querySelector('input[name="email"]').value;
+        const message = contactForm.querySelector('textarea[name="message"]').value;
         
         // Simple validation
         if (!name || !email || !message) {
@@ -186,9 +256,29 @@ function initContactForm() {
             return;
         }
         
-        // Simulate form submission
-        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-        contactForm.reset();
+        // Submit to server
+        const formData = new FormData();
+        formData.append('action', 'contact');
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+        
+        fetch('contact_handler.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                showNotification('Failed to send message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            showNotification('Failed to send message. Please try again.', 'error');
+        });
     });
 }
 
@@ -501,13 +591,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close menu when clicking links
+    // Close menu when clicking links (only on mobile)
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.style.display = 'none';
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+            // Only close menu if screen width is mobile size
+            if (window.innerWidth <= 768) {
+                navMenu.style.display = 'none';
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         });
     });
 });

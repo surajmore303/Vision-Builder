@@ -25,7 +25,7 @@
                     <li><a href="team.html">Team</a></li>
                     <li><a href="experts.html">Experts</a></li>
                     <li><a href="index.html">Contact</a></li>
-                    <li><a href="login.html" class="login-btn">Login</a></li>
+                    <li><a href="login.html" class="login-btn" id="authBtn">Login</a></li>
                 </ul>
                 <div class="hamburger" onclick="toggleMenu()">
                     <span></span>
@@ -284,5 +284,26 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        // Check login status and update navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('check_session.php')
+                .then(response => response.json())
+                .then(data => {
+                    updateNavigation(data.logged_in);
+                })
+                .catch(() => {
+                    // If session check fails, keep default login button
+                });
+        });
+        
+        function updateNavigation(isLoggedIn) {
+            const authBtn = document.getElementById('authBtn');
+            if (authBtn && isLoggedIn) {
+                authBtn.textContent = 'Account';
+                authBtn.href = 'account.php';
+            }
+        }
+    </script>
 </body>
 </html>

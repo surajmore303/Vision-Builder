@@ -119,23 +119,33 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Processing...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                const formType = isLogin ? 'Login' : 'Registration';
-                showNotification(`${formType} successful! Redirecting...`, 'success');
-                
-                // Reset form
-                form.reset();
-                
-                // Redirect to main page after successful login/registration
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 2000);
-                
-                // Reset button
+            // Prepare form data
+            const formData = new FormData(form);
+            formData.append('action', isLogin ? 'login' : 'register');
+            
+            // Submit to server
+            fetch('auth.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = data.redirect || 'account.php';
+                    }, 1000);
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred. Please try again.', 'error');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            });
         });
     });
     
@@ -146,15 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const platform = this.classList.contains('google') ? 'Google' : 
                            this.classList.contains('facebook') ? 'Facebook' : 'LinkedIn';
             
-            showNotification(`Redirecting to ${platform} login...`, 'info');
-            
-            // Simulate social login
-            setTimeout(() => {
-                showNotification(`${platform} login successful!`, 'success');
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1500);
-            }, 2000);
+            showNotification(`${platform} login coming soon...`, 'info');
         });
     });
 });

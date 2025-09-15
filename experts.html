@@ -25,7 +25,7 @@
                     <li><a href="team.html">Team</a></li>
                     <li><a href="experts.html" class="active">Experts</a></li>
                     <li><a href="index.html">Contact</a></li>
-                    <li><a href="login.html" class="login-btn">Login</a></li>
+                    <li><a href="login.html" class="login-btn" id="authBtn">Login</a></li>
                 </ul>
                 <div class="hamburger" onclick="toggleMenu()">
                     <span></span>
@@ -72,10 +72,10 @@
 
                 <div class="expert-card">
                     <div class="expert-image">
-                        <img src="images/screen.jpg" alt="Priya Sharma">
+                        <img src="images/screen.jpg" alt="Snehal Wadne">
                     </div>
                     <div class="expert-info">
-                        <h3>Priya Sharma</h3>
+                        <h3>Snehal Wadne</h3>
                         <p class="position">Product Manager at Microsoft</p>
                         <p class="education">B.Tech IT, NIT Trichy | MBA IIM Bangalore</p>
                         <div class="specialization">
@@ -83,7 +83,7 @@
                             <span class="spec-tag">Leadership</span>
                         </div>
                         <div class="experience">7+ Years Experience</div>
-                        <button class="book-btn" onclick="bookAppointment('Priya Sharma')">Book Appointment</button>
+                        <button class="book-btn" onclick="bookAppointment('Snehal Wadne')">Book Appointment</button>
                     </div>
                 </div>
 
@@ -319,18 +319,10 @@
                 <h2>Book Appointment</h2>
                 <p id="expertName"></p>
             </div>
-            <form class="booking-form">
+            <form class="booking-form" id="bookingForm">
+                <input type="hidden" id="expertNameInput" name="expert_name">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Your Phone" required>
-                </div>
-                <div class="form-group">
-                    <select required>
+                    <select name="preferred_date" required>
                         <option value="">Select Preferred Date</option>
                         <option value="today">Today</option>
                         <option value="tomorrow">Tomorrow</option>
@@ -339,7 +331,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <select required>
+                    <select name="time_slot" required>
                         <option value="">Select Time Slot</option>
                         <option value="10am">10:00 AM - 11:00 AM</option>
                         <option value="2pm">2:00 PM - 3:00 PM</option>
@@ -348,7 +340,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="What would you like to discuss?" rows="4" required></textarea>
+                    <textarea name="discussion_topic" placeholder="What would you like to discuss?" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary">Confirm Booking</button>
             </form>
@@ -405,5 +397,26 @@
 
     <script src="experts-script.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Check login status and update navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('check_session.php')
+                .then(response => response.json())
+                .then(data => {
+                    updateNavigation(data.logged_in);
+                })
+                .catch(() => {
+                    // If session check fails, keep default login button
+                });
+        });
+        
+        function updateNavigation(isLoggedIn) {
+            const authBtn = document.getElementById('authBtn');
+            if (authBtn && isLoggedIn) {
+                authBtn.textContent = 'Account';
+                authBtn.href = 'account.php';
+            }
+        }
+    </script>
 </body>
 </html>
