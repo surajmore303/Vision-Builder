@@ -482,6 +482,36 @@ function toggleMenu() {
     }
 }
 
+// Enhanced Mobile Menu
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+                navMenu.classList.remove('active');
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.classList.add('active');
+            }
+        });
+    }
+    
+    // Close menu when clicking links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.style.display = 'none';
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+});
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Vision Builder website loaded successfully!');

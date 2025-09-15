@@ -1,0 +1,220 @@
+/* Responsive Design for Index Page */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex !important;
+    }
+    
+    .nav-menu {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: white !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding-top: 100px !important;
+        z-index: 1002 !important;
+        transition: left 0.3s ease !important;
+        display: flex !important;
+    }
+    
+    .nav-menu.active {
+        left: 0 !important;
+    }
+    
+    .mobile-logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        color: var(--primary-color) !important;
+        margin-bottom: 2rem !important;
+        padding-bottom: 1rem !important;
+        border-bottom: 1px solid rgba(231, 215, 192, 0.3) !important;
+    }
+    
+    .mobile-logo img {
+        height: 40px !important;
+        width: auto !important;
+    }
+    
+    .nav-menu li {
+        margin: 1.5rem 0 !important;
+        list-style: none !important;
+    }
+    
+    .nav-menu a {
+        font-size: 1.3rem !important;
+        color: var(--primary-color) !important;
+        font-weight: 600 !important;
+        padding: 1rem 2rem !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    /* Hero Section Mobile */
+    .hero .container {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    
+    .hero {
+        padding: 120px 20px 50px !important;
+    }
+    
+    .hero-content {
+        max-width: 100% !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-content p {
+        text-align: center !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-image img {
+        max-width: 300px !important;
+    }
+    
+    .hero-buttons {
+        justify-content: center !important;
+    }
+    
+    /* About Section Mobile */
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .stats {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    
+    /* Services Grid Mobile */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    /* Impact Grid Mobile */
+    .impact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .impact-item {
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+    
+    /* Team Section Mobile */
+    .team-main-row {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .team-member {
+        min-width: 280px !important;
+        padding: 1.5rem !important;
+    }
+    
+    /* Contact Section Mobile */
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    /* Footer Mobile */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    
+    /* Section Headers Mobile */
+    .section-header h2 {
+        font-size: 2rem !important;
+    }
+    
+    .section-header p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100% !important;
+        max-width: 250px !important;
+    }
+    
+    .splash-image img {
+        width: 250px !important;
+        height: 150px !important;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero .container {
+        gap: 2rem !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem !important;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .about-content {
+        gap: 3rem !important;
+    }
+}
+
+/* Hide mobile logo on desktop */
+@media (min-width: 769px) {
+    .mobile-logo {
+        display: none !important;
+    }
+}
+
+/* Text Alignment Fix */
+@media (max-width: 768px) {
+    .hero-content p,
+    .about-text p,
+    .service-card p {
+        text-align: center;
+    }
+    
+    .section-header p {
+        text-align: center !important;
+    }
+}

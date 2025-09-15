@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -405,10 +411,11 @@ body {
         background-color: white;
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
         box-shadow: 0 10px 27px rgba(0,0,0,0.05);
         padding: 2rem 0;
         z-index: 999;
+        display: flex !important;
     }
     
     .nav-menu.active {
@@ -417,6 +424,7 @@ body {
     
     .nav-menu li {
         margin: 1rem 0;
+        list-style: none;
     }
     
     .team-hero h1 {
