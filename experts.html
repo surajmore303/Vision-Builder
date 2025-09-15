@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Alumni - Vision Builder</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="experts-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="Vision Builder" class="logo-img">
+                    <span>Vision Builder</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="experts.html" class="active">Experts</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="login.html" class="login-btn">Login</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Experts Hero Section -->
+    <section class="experts-hero">
+        <div class="container">
+            <h1>Connect with Expert Alumni</h1>
+            <p>Book one-on-one sessions with industry experts and successful alumni to accelerate your career growth</p>
+        </div>
+    </section>
+
+    <!-- Alumni Experts Section -->
+    <section class="alumni-experts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Expert Alumni Mentors</h2>
+                <p>Learn from the best - Connect with successful professionals who've walked your path</p>
+            </div>
+            
+            <div class="experts-grid">
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Rajesh Kumar">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Rajesh Kumar</h3>
+                        <p class="position">Senior Software Engineer at Google</p>
+                        <p class="education">B.Tech CSE, IIT Delhi | M.S. Stanford</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Machine Learning</span>
+                            <span class="spec-tag">System Design</span>
+                        </div>
+                        <div class="experience">5+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Rajesh Kumar')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Priya Sharma">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="position">Product Manager at Microsoft</p>
+                        <p class="education">B.Tech IT, NIT Trichy | MBA IIM Bangalore</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Product Strategy</span>
+                            <span class="spec-tag">Leadership</span>
+                        </div>
+                        <div class="experience">7+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Priya Sharma')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Amit Patel">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Amit Patel</h3>
+                        <p class="position">Data Scientist at Amazon</p>
+                        <p class="education">B.Sc Statistics, Delhi University | M.S. Data Science, CMU</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Data Analytics</span>
+                            <span class="spec-tag">AI/ML</span>
+                        </div>
+                        <div class="experience">6+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Amit Patel')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Sneha Gupta">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Sneha Gupta</h3>
+                        <p class="position">UX Designer at Adobe</p>
+                        <p class="education">B.Des NID Ahmedabad | M.Des Interaction Design, IIIT Bangalore</p>
+                        <div class="specialization">
+                            <span class="spec-tag">UI/UX Design</span>
+                            <span class="spec-tag">Design Thinking</span>
+                        </div>
+                        <div class="experience">4+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Sneha Gupta')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Vikram Singh">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Vikram Singh</h3>
+                        <p class="position">Cybersecurity Analyst at Cisco</p>
+                        <p class="education">B.Tech CSE, VIT Vellore | M.Tech Cybersecurity, IIT Madras</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Ethical Hacking</span>
+                            <span class="spec-tag">Network Security</span>
+                        </div>
+                        <div class="experience">5+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Vikram Singh')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Ananya Reddy">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Ananya Reddy</h3>
+                        <p class="position">Cloud Architect at AWS</p>
+                        <p class="education">B.Tech ECE, BITS Pilani | M.S. Cloud Computing, Georgia Tech</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Cloud Computing</span>
+                            <span class="spec-tag">DevOps</span>
+                        </div>
+                        <div class="experience">6+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Ananya Reddy')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Rohit Agarwal">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Rohit Agarwal</h3>
+                        <p class="position">Mobile App Developer at Flipkart</p>
+                        <p class="education">B.Tech CSE, NSIT Delhi | Android Developer Certification, Google</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Android Development</span>
+                            <span class="spec-tag">Flutter</span>
+                        </div>
+                        <div class="experience">4+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Rohit Agarwal')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Kavya Nair">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Kavya Nair</h3>
+                        <p class="position">Digital Marketing Manager at Zomato</p>
+                        <p class="education">BBA Marketing, Christ University | PG Digital Marketing, MICA</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Digital Marketing</span>
+                            <span class="spec-tag">SEO/SEM</span>
+                        </div>
+                        <div class="experience">5+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Kavya Nair')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Arjun Mehta">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Arjun Mehta</h3>
+                        <p class="position">Blockchain Developer at Polygon</p>
+                        <p class="education">B.Tech CSE, IIIT Hyderabad | Blockchain Certification, IBM</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Blockchain</span>
+                            <span class="spec-tag">Smart Contracts</span>
+                        </div>
+                        <div class="experience">3+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Arjun Mehta')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Divya Joshi">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Divya Joshi</h3>
+                        <p class="position">Game Developer at Ubisoft</p>
+                        <p class="education">B.Tech CSE, Manipal University | Game Development, Unity Certified</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Game Development</span>
+                            <span class="spec-tag">Unity 3D</span>
+                        </div>
+                        <div class="experience">4+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Divya Joshi')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Karan Malhotra">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Karan Malhotra</h3>
+                        <p class="position">Network Engineer at Juniper Networks</p>
+                        <p class="education">B.Tech ECE, DTU Delhi | CCNA/CCNP Certified</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Network Engineering</span>
+                            <span class="spec-tag">Infrastructure</span>
+                        </div>
+                        <div class="experience">6+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Karan Malhotra')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Riya Kapoor">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Riya Kapoor</h3>
+                        <p class="position">AR/VR Developer at Meta</p>
+                        <p class="education">B.Tech CSE, Amity University | VR Development, Oculus Certified</p>
+                        <div class="specialization">
+                            <span class="spec-tag">AR/VR Development</span>
+                            <span class="spec-tag">3D Graphics</span>
+                        </div>
+                        <div class="experience">3+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Riya Kapoor')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Siddharth Rao">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Siddharth Rao</h3>
+                        <p class="position">Database Administrator at Oracle</p>
+                        <p class="education">B.Tech IT, SRM University | Oracle DBA Certified Professional</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Database Management</span>
+                            <span class="spec-tag">SQL Optimization</span>
+                        </div>
+                        <div class="experience">7+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Siddharth Rao')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Neha Bansal">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Neha Bansal</h3>
+                        <p class="position">QA Engineer at Infosys</p>
+                        <p class="education">B.Tech CSE, Thapar University | ISTQB Certified Tester</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Quality Assurance</span>
+                            <span class="spec-tag">Test Automation</span>
+                        </div>
+                        <div class="experience">5+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Neha Bansal')">Book Appointment</button>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <img src="images/screen.jpg" alt="Aditya Verma">
+                    </div>
+                    <div class="expert-info">
+                        <h3>Aditya Verma</h3>
+                        <p class="position">Full Stack Developer at Paytm</p>
+                        <p class="education">B.Tech CSE, Jaypee University | Full Stack Certification, freeCodeCamp</p>
+                        <div class="specialization">
+                            <span class="spec-tag">Full Stack Development</span>
+                            <span class="spec-tag">MERN Stack</span>
+                        </div>
+                        <div class="experience">4+ Years Experience</div>
+                        <button class="book-btn" onclick="bookAppointment('Aditya Verma')">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Book Appointment</h2>
+                <p id="expertName"></p>
+            </div>
+            <form class="booking-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Preferred Date</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="this-week">This Week</option>
+                        <option value="next-week">Next Week</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Time Slot</option>
+                        <option value="10am">10:00 AM - 11:00 AM</option>
+                        <option value="2pm">2:00 PM - 3:00 PM</option>
+                        <option value="4pm">4:00 PM - 5:00 PM</option>
+                        <option value="6pm">6:00 PM - 7:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="What would you like to discuss?" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Vision Builder Logo" class="logo-img">
+                        <span>Vision Builder</span>
+                    </div>
+                    <p>Building your vision into reality with innovative digital solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="experts.html">Experts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Expert Specializations</h4>
+                    <ul>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">Product Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@visionbuilder.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vision Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="experts-script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

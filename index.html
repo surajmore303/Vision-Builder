@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vision Builder</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon"  href="images/logo.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+      <div class="splash-content">
+        <div class="logo-container">
+          <img
+            src="images/logo.png"
+            alt="Vision Builder Logo"
+            class="splash-logo"
+          />
+        </div>
+        <div class="text-container">
+          <span class="logo-text">Vision Builder</span>
+        </div>
+        <div class="splash-image">
+          <img src="images/screen.jpg" alt="Vision Builder" />
+        </div>
+        <div class="loading-animation">
+          <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Website -->
+    <div id="main-website" class="main-website hidden">
+      <!-- Header -->
+      <header class="header">
+        <nav class="navbar">
+          <div class="nav-container">
+            <div class="nav-logo">
+              <img
+                src="images/logo.png"
+                alt="Vision Builder Logo"
+                class="logo-img"
+              />
+              <span>Vision Builder</span>
+            </div>
+            <ul class="nav-menu">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="experts.html">Experts</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Building Your Vision Into Reality</h1>
+          <p>
+            We transform ideas into exceptional digital experiences with
+            cutting-edge technology and innovative design solutions.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary">Get Started</button>
+            <button class="btn-secondary">Learn More</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/screen.jpg" alt="Vision Builder Hero" />
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Vision Builder</h2>
+            <p>Discover our story and commitment to excellence</p>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <h3>Our Mission</h3>
+              <p>
+                To empower businesses and individuals by transforming their
+                visions into powerful digital solutions that drive growth and
+                success.
+              </p>
+
+              <h3>Our Vision</h3>
+              <p>
+                To be the leading force in digital innovation, creating
+                meaningful connections between technology and human potential.
+              </p>
+
+              <div class="stats">
+                <div class="stat">
+                  <h4>500+</h4>
+                  <p>Projects Completed</p>
+                </div>
+                <div class="stat">
+                  <h4>100+</h4>
+                  <p>Happy Clients</p>
+                </div>
+                <div class="stat">
+                  <h4>5+</h4>
+                  <p>Years Experience</p>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <img src="images/1.jpg" alt="About Us" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Highlights Section -->
+      <section class="impact-highlights">
+        <div class="container">
+          <div class="impact-grid">
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="impact-content">
+                <h3>4.8★</h3>
+                <p>Rating</p>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-download"></i>
+              </div>
+              <div class="impact-content">
+                <h3>10,000+</h3>
+                <p>Downloads</p>
+              </div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="impact-content">
+                <h3>7,500+</h3>
+                <p>Students have already built their vision with us</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions for your digital needs</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Web Development</h3>
+              <p>
+                Custom websites and web applications built with modern
+                technologies and best practices.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Mobile Apps</h3>
+              <p>
+                Native and cross-platform mobile applications for iOS and
+                Android devices.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3>UI/UX Design</h3>
+              <p>
+                Beautiful and intuitive user interfaces that enhance user
+                experience and engagement.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Digital Marketing</h3>
+              <p>
+                Strategic digital marketing solutions to boost your online
+                presence and reach.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <span class="emoji-icon">🎯</span>
+              </div>
+              <h3>Career Guidance</h3>
+              <p>
+                Professional career counseling and guidance to help you navigate
+                your career path successfully.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <span class="emoji-icon">📚</span>
+              </div>
+              <h3>Skill Development</h3>
+              <p>
+                Comprehensive skill development programs to enhance your
+                professional capabilities and expertise.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <span class="emoji-icon">🧭</span>
+              </div>
+              <h3>Personality & Vision Test</h3>
+              <p>
+                In-depth personality assessments and vision tests to discover
+                your strengths and career direction.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">
+                <span class="emoji-icon">🤝</span>
+              </div>
+              <h3>Mentor Connect</h3>
+              <p>
+                Connect with experienced mentors who can guide you through your
+                professional journey and growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="team">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our Team</h2>
+            <p>Meet the talented individuals behind Vision Builder</p>
+          </div>
+          <!-- Main Team Row (3 members) -->
+          <div class="team-main-row">
+            <div class="team-member">
+              <div class="member-image">
+                <img src="images/screen.jpg" alt="Team Member" />
+              </div>
+              <h3>Snehal Wadne</h3>
+              <p>Team Leader</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="member-image">
+                <img src="images/screen.jpg" alt="Team Member" />
+              </div>
+              <h3>Suraj More & Samarth Kale</h3>
+              <h3>Suraj More</h3>
+              <p>Technical Support</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="team-member">
+              <div class="member-image">
+                <img src="images/screen.jpg" alt="Team Member" />
+              </div>
+              <h3>Ayan Shaikh</h3>
+              <p>Project Analyzer</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrolling Team Members -->
+          <div class="team-scroll-container">
+            <div class="team-scroll-track">
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Khushi Pol</h3>
+                <h3>preeti chavan </h3>
+                <h3>Vaishnavi </h3>
+                <p>Data Research and Analysis</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Sunny More</h3>
+                <h3>Pratik Khedkar</h3>
+                <p>Coordinator and Management</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Shlok Parge</h3>
+                <h3>Yash More</h3>
+                <h3>Preeti</h3>
+                <p>Communication & Outreach</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Suraj Kardule</h3>
+                <h3>Utkarsh Pawar </h3>
+                <p>Field Survey</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Vaishnavi </h3>
+                <h3>Priti  </h3>
+                <h3>Khushi</h3>
+                <p>Research Team</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+              <!-- Duplicate for seamless loop -->
+              <div class="team-member">
+                <div class="member-image">
+                  <img src="images/screen.jpg" alt="Team Member" />
+                </div>
+                <h3>Khushi Pol</h3>
+                <p>Data Research and Analysis</p>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+               
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Real feedback from our satisfied customers</p>
+          </div>
+          <div class="testimonials-slider">
+            <div class="testimonial active">
+              <div class="testimonial-content">
+                <p>
+                  "Vision Builder transformed our business with their
+                  exceptional web development services. Highly recommended!"
+                </p>
+                <div class="testimonial-author">
+                  <img src="images/screen.jpg" alt="Client" />
+                  <div>
+                    <h4>Sarah Wilson</h4>
+                    <span>CEO, TechCorp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>
+                  "Amazing team with incredible attention to detail. They
+                  delivered exactly what we needed and more."
+                </p>
+                <div class="testimonial-author">
+                  <img src="images/screen.jpg" alt="Client" />
+                  <div>
+                    <h4>David Brown</h4>
+                    <span>Founder, StartupXYZ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your project? Let's discuss your vision</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>123 Business Street, City, State 12345</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@visionbuilder.com</p>
+                </div>
+              </div>
+            </div>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <div class="footer-logo">
+                <img
+                  src="images/logo.png"
+                  alt="Vision Builder Logo"
+                  class="logo-img"
+                />
+                <span>Vision Builder</span>
+              </div>
+              <p>
+                Building your vision into reality with innovative digital
+                solutions.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Mobile Apps</a></li>
+                <li><a href="#">UI/UX Design</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Contact Info</h4>
+              <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@visionbuilder.com</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 Business Street, City
+              </p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Vision Builder. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <div class="modal-header">
+          <h2>Login</h2>
+        </div>
+        <form class="auth-form">
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" required />
+          </div>
+          <button type="submit" class="btn-primary">Login</button>
+          <p class="auth-switch">
+            Don't have an account?
+            <a href="#" onclick="switchModal('loginModal', 'registerModal')"
+              >Register</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('registerModal')">&times;</span>
+        <div class="modal-header">
+          <h2>Register</h2>
+        </div>
+        <form class="auth-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Confirm Password" required />
+          </div>
+          <button type="submit" class="btn-primary">Register</button>
+          <p class="auth-switch">
+            Already have an account?
+            <a href="#" onclick="switchModal('registerModal', 'loginModal')"
+              >Login</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
